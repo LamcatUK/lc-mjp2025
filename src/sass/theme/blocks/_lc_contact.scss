@@ -1,0 +1,11 @@
+.contact {
+  a {
+    color: var(--col-black);
+    text-decoration: none;
+    font-weight: var(--fw-accent);
+    transition: color var(--transition);
+    &:hover {
+      color: var(--col-accent-400);
+    }
+  }
+}

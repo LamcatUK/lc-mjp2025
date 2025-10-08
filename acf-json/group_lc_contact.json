@@ -1,0 +1,87 @@
+{
+  "key": "group_lc_contact",
+  "title": "LC Contact",
+  "fields": [
+    {
+      "key": "field_lc_contact_title",
+      "label": "LC Contact",
+      "name": "title",
+      "type": "message"
+    },
+    {
+      "key": "field_68a76157edf6d",
+      "label": "Title",
+      "name": "contact_title",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "allow_in_bindings": 0,
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_68a76161edf6e",
+      "label": "Intro",
+      "name": "contact_intro",
+      "aria-label": "",
+      "type": "textarea",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "allow_in_bindings": 0,
+      "rows": "",
+      "placeholder": "",
+      "new_lines": "wpautop"
+    },
+    {
+      "key": "field_68a76177edf6f",
+      "label": "Form ID",
+      "name": "form_id",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "allow_in_bindings": 0,
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/lc-contact"
+      }
+    ]
+  ],
+  "active": 1,
+  "description": "",
+  "modified": 1759680166
+}

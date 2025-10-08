@@ -1,0 +1,98 @@
+header {
+  background-color: transparent;
+  transition: var(--transition);
+
+  &.scrolled {
+    background-color: var(--col-primary-900);
+  }
+
+  font-family: var(--ff-heading);
+
+  .navbar-toggler {
+    i {
+      color: var(--col-accent-400);
+    }
+  }
+
+  .contact-info {
+    font-size: var(--fs-ui);
+    color: var(--col-white);
+    a {
+      text-transform: initial !important;
+    }
+  }
+
+  .navbar-nav {
+    margin-block: 0;
+  }
+
+  a,
+  a.nav-link {
+    color: var(--col-white);
+    font-size: var(--fs-ui);
+    font-weight: var(--fw-ui);
+    transition: var(--transition);
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0;
+    @media (min-width: 992px) {
+      &:hover {
+        color: var(--col-accent-400);
+        text-decoration: none;
+      }
+    }
+    &:focus {
+      color: var(--col-accent-400);
+      text-decoration: none;
+    }
+  }
+
+  .logo-container {
+    max-width: 240px;
+    margin-right: 1rem;
+  }
+  .logo {
+    background-image: url(../img/mjp-logo.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    aspect-ratio: 56 / 50;
+    width: 56px;
+    height: 50px;
+    max-width: 100%;
+  }
+
+  .current_page_item > .nav-link,
+  .current_page_parent > .nav-link,
+  .dropdown.current-page-ancestor > .nav-link,
+  .dropdown.current-menu-item > .nav-link {
+    color: var(--col-accent-400);
+    font-weight: var(--fw-ui);
+  }
+
+  @media (max-width: 991px) {
+    .navbar-collapse {
+      background: var(--col-neutral-900);
+      min-height: 100svh;
+      /* Do not set display:flex or height, let Bootstrap animate */
+    }
+    .navbar-nav {
+      width: 100%;
+      padding-bottom: 2rem;
+    }
+    .nav-link,
+    .navbar-nav .nav-link {
+      font-size: var(--fs-subtle);
+      padding: 1rem 0;
+    }
+    .dropdown-item {
+      font-size: var(--fs-body);
+    }
+
+    .fs-subtle a {
+      font-size: var(--fs-subtle);
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.why-mjp {
+  .why__icon {
+    width: 3rem;
+    flex-shrink: 0; // Don't let it shrink
+    display: grid;
+    place-content: center;
+  }
+
+  .why__reason {
+    flex: 1;
+    line-height: 1.5;
+    font-weight: var(--fw-accent);
+  }
+}

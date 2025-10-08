@@ -1,0 +1,56 @@
+/* =========================
+   COLOURS — utilities
+   ========================= */
+
+/* Text */
+.text-primary-900 {
+  color: var(--col-primary-900);
+}
+.text-primary-200 {
+  color: var(--col-primary-200);
+}
+.text-secondary-100 {
+  color: var(--col-secondary-100);
+}
+.text-accent-400 {
+  color: var(--col-accent-400);
+}
+
+/* Backgrounds */
+.bg-primary-900 {
+  background-color: var(--col-primary-900);
+}
+.bg-primary-200 {
+  background-color: var(--col-primary-200);
+}
+.bg-secondary-100 {
+  background-color: var(--col-secondary-100);
+}
+.bg-accent-400 {
+  background-color: var(--col-accent-400);
+}
+
+/* Borders */
+.border-primary-900 {
+  border-color: var(--col-primary-900);
+}
+.border-primary-400 {
+  border-color: var(--col-primary-400);
+}
+.border-primary-100 {
+  border-color: var(--col-primary-100);
+}
+.border-accent-400 {
+  border-color: var(--col-accent-400);
+}
+
+/* Shadows & radius */
+.shadow-active {
+  box-shadow: var(--shadow-active);
+}
+.shadow-noninteractive {
+  box-shadow: var(--shadow-noninteractive);
+}
+.shadow-interactive {
+  box-shadow: var(--shadow-interactive);
+}

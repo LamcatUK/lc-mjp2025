@@ -1,0 +1,92 @@
+$col-primary: #27383a;
+$col-dark: #222222;
+$col-darkest: #4a4a4a;
+$col-light: #f2f2f2;
+
+:root {
+  /* =========================
+     COLOURS (HSL + computed)
+     ========================= */
+
+  --col-white-hsl: 0 0% 100%; /* #FFFFFF – pure white */
+  --col-white: hsl(var(--col-white-hsl));
+
+  --col-black-hsl: 0 0% 0%; /* #000000 – pure black */
+
+  // --col-black: hsl(var(--col-neutral-900-hsl));
+  --col-black: hsl(var(--col-black-hsl));
+
+  // --col-primary-900-hsl: 235 63% 27%; /* #1A2171 – primary blue */
+  --col-primary-900-hsl: 224 48% 18%; /* #182444 – primary blue */
+  --col-primary-900: hsl(var(--col-primary-900-hsl));
+
+  // --col-primary-200-hsl: 224 48% 94%; /* #E8EAF6 – light primary */
+  --col-primary-200-hsl: 221 24% 87%; /* #D5DAE5 – light primary */
+  --col-primary-200: hsl(var(--col-primary-200-hsl));
+
+  --col-secondary-100-hsl: 220 16% 96%; /* #F4F5F7 – light grey */
+  --col-secondary-100: hsl(var(--col-secondary-100-hsl));
+
+  --col-accent-400-hsl: 42 91% 50%; /* #f4ad0c – accent */
+  --col-accent-400: hsl(var(--col-accent-400-hsl));
+
+  /* Accent variants */
+  --col-accent-400-hover-hsl: 42 91% 40%; /* darker by ~7% lightness */
+  --col-accent-400-hover: hsl(var(--col-accent-400-hover-hsl));
+
+  --col-accent-400-active-hsl: 42 91% 35%; /* darker by ~12% lightness */
+  --col-accent-400-active: hsl(var(--col-accent-400-active-hsl));
+
+  /* =========================
+     TYPOGRAPHY (families/weights)
+     ========================= */
+  --ff-heading:
+    "Work Sans", monospace, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --ff-body:
+    "Lato", monospace, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+
+  --fw-heading: 600; /* Semibold */
+  --fw-body: 300; /* Regular */
+  --fw-meta: 300; /* Thin */
+  --fw-ui: 600; /* Semibold */
+  --fw-accent: 700; /* Light Italic */
+
+  --lh-tight: 1.1;
+  --lh-snug: 1.25;
+  --lh-normal: 1.5;
+
+  /* =========================
+     TYPOGRAPHY (responsive sizes)
+     ========================= */
+  --fs-display: clamp(2.25rem, 1.2rem + 2.5vw, 3rem); /* 36→48px */
+  --fs-h2: clamp(1.75rem, 1.1rem + 1.5vw, 2.25rem); /* 28→36px */
+  --fs-h3: clamp(1.25rem, 1.05rem + 0.8vw, 1.5rem); /* 20→24px */
+  --fs-subtle: clamp(1.125rem, 1.02rem + 0.5vw, 1.375rem); /* 18→22px */
+  --fs-body: clamp(1rem, 0.95rem + 0.4vw, 1.125rem); /* 16→18px */
+  --fs-meta: clamp(1rem, 0.98rem + 0.2vw, 1.0625rem); /* 16→17px */
+  --fs-ui: clamp(0.875rem, 0.82rem + 0.3vw, 0.9375rem); /* 14→15px */
+  --fs-tiny: clamp(0.75rem, 0.7rem + 0.25vw, 0.9375rem); /* 12→15px */
+
+  /* =========================
+     SHADOWS
+     ========================= */
+
+  /* Close & tight – "active" */
+  --shadow-active: 0 1px 2px rgba(0, 0, 0, 0.18), 0 1px 3px rgba(0, 0, 0, 0.12);
+
+  /* Mid & airy – "non-interactive" */
+  --shadow-noninteractive:
+    0 4px 6px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06);
+
+  /* Out & clear – "interactive" */
+  --shadow-interactive:
+    0 8px 12px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.08);
+
+  /* === Utilities === */
+  --transition: 250ms ease-out;
+
+  --h-top: 72px;
+  --h-top-desktop: 130px;
+}

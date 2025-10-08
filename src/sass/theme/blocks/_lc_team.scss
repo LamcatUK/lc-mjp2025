@@ -1,0 +1,27 @@
+.team {
+  &__person {
+    box-shadow: var(--shadow-active);
+  }
+  &__name {
+    font-weight: 600;
+    font-size: var(--fs-subtle);
+    line-height: var(--lh-snug);
+    margin-bottom: 4px;
+  }
+  &__role {
+    font-weight: 400;
+    font-size: var(--fs-meta);
+    line-height: var(--lh-snug);
+  }
+  &__detail {
+    background-color: var(--col-primary-900);
+    color: var(--col-white);
+    padding: 1rem;
+  }
+  &__photo {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
