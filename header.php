@@ -107,8 +107,8 @@ if ( session_status() === PHP_SESSION_NONE ) {
     itemtype="http://schema.org/WebSite">
 	<nav class="navbar navbar-expand-lg">
 		<div class="container gap-4">
-            <div class="d-flex justify-content-between w-100 w-lg-auto align-items-center py-3 py-lg-0">
-                <div class="logo-container"><a href="/" class="logo navbar-brand" aria-label="Harrier Gates Homepage"></a></div>
+            <div class="d-flex justify-content-between w-100 w-lg-auto align-items-center py-1 py-lg-0">
+                <div class="logo-container d-flex align-items-center"><a href="/" class="logo navbar-brand" aria-label="Harrier Gates Homepage"></a></div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false"
                     aria-label="Toggle navigation">

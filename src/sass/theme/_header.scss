@@ -1,8 +1,15 @@
 header {
   background-color: transparent;
-  transition: var(--transition);
+
+  @media (min-width: 992px) {
+    transition: var(--transition);
+  }
 
   &.scrolled {
+    background-color: var(--col-primary-900);
+  }
+
+  &.mobile-menu-open {
     background-color: var(--col-primary-900);
   }
 
@@ -76,7 +83,15 @@ header {
     .navbar-collapse {
       background: var(--col-neutral-900);
       min-height: 100svh;
+      /* Disable Bootstrap collapse animation */
+      transition: none !important;
       /* Do not set display:flex or height, let Bootstrap animate */
+    }
+
+    /* Disable all collapse transitions on mobile */
+    .collapsing {
+      transition: none !important;
+      height: auto !important;
     }
     .navbar-nav {
       width: 100%;

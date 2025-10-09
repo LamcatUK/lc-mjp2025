@@ -16,7 +16,7 @@ $page_title = get_field( 'title' ) ? get_field( 'title' ) : get_the_title();
 			<div class="col-md-6 d-flex flex-column justify-content-center page-hero__content">
 				<h1 class="page-hero__title"><?= esc_html( $page_title ); ?></h1>
 				<div class="page-hero__intro mb-4"><?= esc_html( get_field( 'intro' ) ); ?></div>
-				<div class="d-flex gap-2 justify-content-start flex-wrap">
+				<div class="d-flex gap-1 justify-content-start flex-wrap">
 				<?php
 				if ( get_field( 'link' ) ) {
 					$l = get_field( 'link' );

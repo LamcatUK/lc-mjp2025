@@ -66,6 +66,67 @@ AOS.init({
   window.addEventListener("scroll", addNavbarBackground);
 })();
 
+// Add background to navbar when mobile menu is opened
+(function () {
+  var navbar = document.getElementById("wrapper-navbar");
+  var mobileToggle = document.querySelector(".navbar-toggler");
+  var mobileMenu = document.getElementById("navbar");
+
+  if (!mobileToggle || !mobileMenu) return;
+
+  var handleMobileMenuToggle = function () {
+    // Check if the mobile menu is shown (Bootstrap 5 uses 'show' class)
+    if (mobileMenu.classList.contains("show")) {
+      navbar.classList.add("mobile-menu-open");
+    } else {
+      navbar.classList.remove("mobile-menu-open");
+    }
+  };
+
+  // Listen for Bootstrap collapse events
+  mobileMenu.addEventListener("shown.bs.collapse", function () {
+    navbar.classList.add("mobile-menu-open");
+  });
+
+  mobileMenu.addEventListener("hidden.bs.collapse", function () {
+    navbar.classList.remove("mobile-menu-open");
+  });
+
+  // Fallback: Listen for click events on toggle button
+  mobileToggle.addEventListener("click", function () {
+    // Use a small delay to let Bootstrap finish the toggle
+    setTimeout(handleMobileMenuToggle, 50);
+  });
+})();
+
+// Page Hero: Set background image on mobile for blend mode effect
+(function () {
+  var pageHero = document.querySelector(".page-hero");
+  var heroImage = document.querySelector(".page-hero__image");
+
+  if (!pageHero || !heroImage) return;
+
+  var setMobileBackground = function () {
+    if (window.innerWidth <= 767) {
+      var imageSrc = heroImage.src || heroImage.getAttribute("data-src");
+      if (imageSrc) {
+        // Set multiple backgrounds: gradient overlay + image
+        var gradient =
+          "linear-gradient(135deg, hsl(224 48% 18% / 0.9) 0%, hsl(224 48% 18% / 0.8) 50%, hsl(224 48% 18% / 0.6) 100%)";
+        pageHero.style.backgroundImage = `${gradient}, url(${imageSrc})`;
+      }
+    } else {
+      pageHero.style.backgroundImage = "";
+    }
+  };
+
+  // Set on load
+  setMobileBackground();
+
+  // Update on resize
+  window.addEventListener("resize", setMobileBackground);
+})();
+
 // // Header background
 // document.addEventListener("scroll", function () {
 //   var nav = document.getElementById("navbar");

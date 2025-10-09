@@ -8,6 +8,51 @@
   min-height: 550px;
   margin-block-start: var(--h-top);
 
+  @media (max-width: 767px) {
+    // On mobile, use background blend mode for sophisticated overlay
+    // This will be set via JavaScript with multiple backgrounds
+    background-repeat: no-repeat, no-repeat;
+    background-size: cover, cover;
+    background-position: center, center;
+    background-attachment: local, local;
+
+    // Apply blend mode to combine the gradient and image
+    background-blend-mode: multiply;
+
+    // Alternative blend modes you can try:
+    // background-blend-mode: overlay;    // High contrast
+    // background-blend-mode: soft-light; // Subtle lighting effect
+    // background-blend-mode: hard-light; // Dramatic contrast
+    // background-blend-mode: color-burn; // Dark, intense
+    // background-blend-mode: darken;     // Darker areas dominant
+
+    .container {
+      height: calc(100svh - var(--h-top));
+      position: relative;
+      z-index: 2; // Above the overlay
+    }
+
+    .row {
+      height: 100%;
+      display: flex !important;
+      align-items: center;
+    }
+
+    // Hide the image element on mobile since we're using CSS background
+    &__image-container {
+      display: none;
+    }
+
+    &__content {
+      color: var(--col-white);
+      width: 100%;
+      padding: 2rem;
+
+      // Optional: Add text shadow for better readability
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+  }
+
   &__content {
     img {
       max-width: 200px;
@@ -19,7 +64,9 @@
 
   &__image-container {
     position: relative;
+    min-height: 200px;
   }
+
   &__image {
     position: absolute;
     inset: 0;

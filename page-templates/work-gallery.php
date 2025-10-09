@@ -15,13 +15,16 @@ get_header();
 			<div class="row h-100">
 				<div class="col-md-6 d-flex flex-column justify-content-center page-hero__content">
 					<h1 class="page-hero__title">Recent Projects</h1>
-					<div class="page-hero__intro mb-4"><?= get_the_content(); ?></div>
-					<div class="d-flex gap-2 justify-content-start flex-wrap">
+					<div class="page-hero__intro mb-4"><?= wp_kses_post( get_the_content() ); ?></div>
+					<div class="d-flex gap-1 justify-content-start flex-wrap">
 						<a href="/contact/" class="btn btn--primary me-3 mb-4 align-self-start">Contact Us Today</a>
 						<a href="tel:<?= esc_attr( parse_phone( get_field( 'contact_phone', 'option' ) ) ); ?>" class="btn btn--primary me-3 mb-4 align-self-start"><i class="fas fa-phone"></i> Call <?= esc_html( get_field( 'contact_phone', 'option' ) ); ?></a>
 					</div>
-					<div class="">
+					<div class="d-flex gap-2 justify-content-start align-items-center flex-wrap">
 						<img src="<?= esc_url( get_stylesheet_directory_uri() . '/img/napit-logo.png' ); ?>" class="mb-4" width="460" height="175">
+						<a href="https://trustedtraders.which.co.uk/businesses/mjp-electrical-contractors-ltd/" target="_blank" rel="noopener noreferrer">
+							<img src="<?= esc_url( get_stylesheet_directory_uri() . '/img/which.png' ); ?>" class="mb-4" width="460" height="175">
+						</a>
 					</div>
 				</div>
 				<div class="col-md-6 page-hero__image-container">
@@ -47,17 +50,20 @@ get_header();
 				)
 			);
 			?>
-			<div class="gallery__filter py-5 d-flex flex-wrap gap-2">
-				<button type="button" class="btn btn--filter btn--ghost active" data-filter="">All Work Types</button>
-				<?php
-				foreach ( $terms as $work_term ) {
-					?>
-					<button type="button" class="btn btn--filter btn--ghost" data-filter="<?= esc_attr( $work_term->slug ); ?>">
-						<?= esc_html( $work_term->name ); ?>
-					</button>
+			<div class="gallery__filter py-5">
+				<label for="workTypeFilter" class="gallery__filter-label mb-2 d-block">Filter by Work Type:</label>
+				<select class="form-select gallery__filter-select w-md-50" id="workTypeFilter">
+					<option value="">All Work Types</option>
 					<?php
-				}
-				?>
+					foreach ( $terms as $work_term ) {
+						?>
+						<option value="<?= esc_attr( $work_term->slug ); ?>">
+							<?= esc_html( $work_term->name ); ?>
+						</option>
+						<?php
+					}
+					?>
+				</select>
 			</div>
 			<?php
 			// Fetch all attachments.
@@ -131,7 +137,7 @@ add_action(
 		?>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-	var filterButtons = document.querySelectorAll('.btn--filter');
+	var filterSelect = document.getElementById('workTypeFilter');
 	var items = document.querySelectorAll('.gallery-item-wrapper');
 	var lightbox;
 
@@ -170,44 +176,28 @@ document.addEventListener('DOMContentLoaded', function() {
 		});
 	}
 
-	function setActiveButton(val) {
-		filterButtons.forEach(function(btn) {
-			if (btn.getAttribute('data-filter') === val) {
-				btn.classList.add('active');
+	function filterItems(val) {
+		items.forEach(function(item) {
+			if (!val || item.getAttribute('data-work-type') && item.getAttribute('data-work-type').split(' ').includes(val)) {
+				item.style.display = '';
 			} else {
-				btn.classList.remove('active');
+				item.style.display = 'none';
 			}
 		});
+		updateGalleryAttributes(val);
+		updateLightbox(val);
 	}
 
-	filterButtons.forEach(function(btn) {
-		btn.addEventListener('click', function() {
-			var val = btn.getAttribute('data-filter');
-			setActiveButton(val);
-			items.forEach(function(item) {
-				if (!val || item.getAttribute('data-work-type') && item.getAttribute('data-work-type').split(' ').includes(val)) {
-					item.style.display = '';
-				} else {
-					item.style.display = 'none';
-				}
-			});
-			updateGalleryAttributes(val);
-			updateLightbox(val);
-		});
+	// Handle select change
+	filterSelect.addEventListener('change', function() {
+		var val = filterSelect.value;
+		filterItems(val);
 	});
 
 	// Initial setup: check for work_type in URL
 	var initialVal = getUrlParam('work_type') || '';
-	setActiveButton(initialVal);
-	items.forEach(function(item) {
-		if (!initialVal || item.getAttribute('data-work-type') && item.getAttribute('data-work-type').split(' ').includes(initialVal)) {
-			item.style.display = '';
-		} else {
-			item.style.display = 'none';
-		}
-	});
-	updateGalleryAttributes(initialVal);
-	updateLightbox(initialVal);
+	filterSelect.value = initialVal;
+	filterItems(initialVal);
 });
 </script>
 		<?php

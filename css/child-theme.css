@@ -22093,10 +22093,17 @@ strong {
 }
 header {
   background-color: transparent;
-  transition: var(--transition);
   font-family: var(--ff-heading);
 }
+@media (min-width: 992px) {
+  header {
+    transition: var(--transition);
+  }
+}
 header.scrolled {
+  background-color: var(--col-primary-900);
+}
+header.mobile-menu-open {
   background-color: var(--col-primary-900);
 }
 header .navbar-toggler i {
@@ -22158,10 +22165,19 @@ header .dropdown.current-menu-item > .nav-link {
   font-weight: var(--fw-ui);
 }
 @media (max-width: 991px) {
+  header {
+    /* Disable all collapse transitions on mobile */
+  }
   header .navbar-collapse {
     background: var(--col-neutral-900);
     min-height: 100svh;
+    /* Disable Bootstrap collapse animation */
+    transition: none !important;
     /* Do not set display:flex or height, let Bootstrap animate */
+  }
+  header .collapsing {
+    transition: none !important;
+    height: auto !important;
   }
   header .navbar-nav {
     width: 100%;
@@ -22514,6 +22530,34 @@ header .dropdown.current-menu-item > .nav-link {
   min-height: 550px;
   margin-block-start: var(--h-top);
 }
+@media (max-width: 767px) {
+  .page-hero {
+    background-repeat: no-repeat, no-repeat;
+    background-size: cover, cover;
+    background-position: center, center;
+    background-attachment: local, local;
+    background-blend-mode: multiply;
+  }
+  .page-hero .container, .page-hero .wp-block-group:not(.alignfull) {
+    height: calc(100svh - var(--h-top));
+    position: relative;
+    z-index: 2;
+  }
+  .page-hero .row {
+    height: 100%;
+    display: flex !important;
+    align-items: center;
+  }
+  .page-hero__image-container {
+    display: none;
+  }
+  .page-hero__content {
+    color: var(--col-white);
+    width: 100%;
+    padding: 2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+}
 .page-hero__content img {
   max-width: 200px;
   max-height: 110px;
@@ -22522,6 +22566,7 @@ header .dropdown.current-menu-item > .nav-link {
 }
 .page-hero__image-container {
   position: relative;
+  min-height: 200px;
 }
 .page-hero__image {
   position: absolute;

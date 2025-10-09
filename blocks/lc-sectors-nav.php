@@ -39,7 +39,7 @@ if ( ! $sectors ) {
 			<?php
 		}
 		?>
-		<div class="row">
+		<div class="row g-4">
 			<?php
 			foreach ( $sectors as $sector ) {
 				?>
