@@ -22275,9 +22275,9 @@ header .dropdown.current-menu-item > .nav-link {
   position: relative;
   isolation: isolate;
   color: var(--col-white);
-  height: 600px;
+  height: 650px;
 }
-.home-hero img {
+.home-hero__image {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -22301,6 +22301,16 @@ header .dropdown.current-menu-item > .nav-link {
   align-items: center;
   height: 100%;
   padding-block-start: var(--h-top);
+}
+.home-hero .container .badges, .home-hero .wp-block-group:not(.alignfull) .badges {
+  margin-top: 1rem;
+}
+.home-hero .container .badges img, .home-hero .wp-block-group:not(.alignfull) .badges img {
+  max-width: 180px;
+  max-height: 90px;
+  height: auto;
+  width: auto;
+  z-index: 2;
 }
 .home-hero__pre-title {
   font-family: var(--ff-heading);
