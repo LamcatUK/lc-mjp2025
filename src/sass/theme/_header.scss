@@ -56,19 +56,32 @@ header {
   }
 
   .logo-container {
-    max-width: 240px;
     margin-right: 1rem;
+    max-width: 240px;
+
+    @media (min-width: 1400px) {
+      max-width: 300px;
+    }
   }
   .logo {
-    background-image: url(../img/mjp-logo.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
     display: inline-block;
+    max-width: 100%;
+    padding-block: 0;
+
+    background-image: url(../img/mjp-logo.svg);
     aspect-ratio: 56 / 50;
     width: 56px;
     height: 50px;
-    max-width: 100%;
+
+    @media (min-width: 1400px) {
+      background-image: url(../img/mjp-logo--full.svg);
+      aspect-ratio: 575 / 100;
+      height: 52px;
+      width: 300px;
+    }
   }
 
   .current_page_item > .nav-link,
