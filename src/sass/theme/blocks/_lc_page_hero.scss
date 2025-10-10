@@ -27,7 +27,7 @@
     // background-blend-mode: darken;     // Darker areas dominant
 
     .container {
-      height: calc(100svh - var(--h-top));
+      min-height: calc(100svh - var(--h-top));
       position: relative;
       z-index: 2; // Above the overlay
     }

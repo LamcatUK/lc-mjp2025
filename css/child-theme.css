@@ -22539,7 +22539,7 @@ header .dropdown.current-menu-item > .nav-link {
     background-blend-mode: multiply;
   }
   .page-hero .container, .page-hero .wp-block-group:not(.alignfull) {
-    height: calc(100svh - var(--h-top));
+    min-height: calc(100svh - var(--h-top));
     position: relative;
     z-index: 2;
   }
