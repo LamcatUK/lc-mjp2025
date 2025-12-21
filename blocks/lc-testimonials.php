@@ -54,23 +54,23 @@ add_action(
 		?>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    var swiper = new Swiper('.testimonials__swiper.swiper', {
-        loop: true,
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: true,
-        },
+	var swiper = new Swiper('.testimonials__swiper.swiper', {
+		loop: true,
+		autoplay: {
+			delay: 5000,
+			disableOnInteraction: true,
+		},
 		effect: 'fade',
 		fadeEffect: {
 			crossFade: true,
 		},
-        slidesPerView: 1,
-        spaceBetween: 24,
+		slidesPerView: 1,
+		spaceBetween: 24,
 		pagination: {
 			el: '.swiper-pagination',
 			clickable: true,
 		},
-    });
+	});
 });
 </script>
 		<?php

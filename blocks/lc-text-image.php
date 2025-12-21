@@ -7,9 +7,10 @@
 
 defined( 'ABSPATH' ) || exit;
 
+// Support Gutenberg color picker.
+$bg = ! empty( $block['backgroundColor'] ) ? 'has-' . $block['backgroundColor'] . '-background-color' : '';
+$fg = ! empty( $block['textColor'] ) ? 'has-' . $block['textColor'] . '-color' : '';
 // Get ACF fields.
-$bg        = get_field( 'bg_colour' );
-$fg        = get_field( 'fg_colour' );
 $col_order = get_field( 'order' ) ? get_field( 'order' ) : 'Text Image';
 $split     = get_field( 'split' ) ? get_field( 'split' ) : '50 50';
 $level     = get_field( 'level' ) ? get_field( 'level' ) : 'h2';
