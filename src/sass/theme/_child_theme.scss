@@ -7,6 +7,11 @@
 @import "gallery";
 @import "blocks/blocks";
 
+// Adjust fixed header when admin bar is present
+.admin-bar header.fixed-top {
+  top: 32px; // Admin bar height
+}
+
 body {
   background-color: var(--col-neutral-50);
 }

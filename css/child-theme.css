@@ -22759,6 +22759,10 @@ header .dropdown.current-menu-item > .nav-link {
   object-fit: cover;
 }
 
+.admin-bar header.fixed-top {
+  top: 32px;
+}
+
 body {
   background-color: var(--col-neutral-50);
 }

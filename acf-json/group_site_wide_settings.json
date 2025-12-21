@@ -84,53 +84,6 @@
             "new_lines": "br"
         },
         {
-            "key": "field_688b355bdd83e",
-            "label": "Author Bio",
-            "name": "author_bio",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "rows": "",
-            "placeholder": "",
-            "new_lines": "br"
-        },
-        {
-            "key": "field_688b356bdd83f",
-            "label": "Author Photo",
-            "name": "author_photo",
-            "aria-label": "",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "id",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "allow_in_bindings": 0,
-            "preview_size": "medium"
-        },
-        {
             "key": "field_688cb59e54be2",
             "label": "Socials",
             "name": "social",
@@ -361,7 +314,7 @@
             "name": "schema_business_type",
             "aria-label": "",
             "type": "text",
-            "instructions": "Schema.org business type (e.g., ProfessionalService, ArchitecturalFirm, GeneralContractor)",
+            "instructions": "Schema.org type (e.g., ProfessionalService, LocalBusiness)",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -378,11 +331,11 @@
         },
         {
             "key": "field_schema_logo",
-            "label": "Business Logo",
+            "label": "Logo",
             "name": "schema_logo",
             "aria-label": "",
             "type": "image",
-            "instructions": "Logo for schema markup",
+            "instructions": "Company logo for schema markup",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -408,7 +361,7 @@
             "name": "schema_latitude",
             "aria-label": "",
             "type": "text",
-            "instructions": "Business location latitude",
+            "instructions": "Geographic latitude",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -419,7 +372,7 @@
             "default_value": "",
             "maxlength": "",
             "allow_in_bindings": 0,
-            "placeholder": "51.5074",
+            "placeholder": "",
             "prepend": "",
             "append": ""
         },
@@ -429,7 +382,7 @@
             "name": "schema_longitude",
             "aria-label": "",
             "type": "text",
-            "instructions": "Business location longitude",
+            "instructions": "Geographic longitude",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -440,7 +393,7 @@
             "default_value": "",
             "maxlength": "",
             "allow_in_bindings": 0,
-            "placeholder": "-0.1278",
+            "placeholder": "",
             "prepend": "",
             "append": ""
         },
@@ -450,7 +403,7 @@
             "name": "schema_street_address",
             "aria-label": "",
             "type": "text",
-            "instructions": "",
+            "instructions": "Street address for schema markup",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -467,15 +420,15 @@
         },
         {
             "key": "field_schema_locality",
-            "label": "City\/Town",
+            "label": "City\/Locality",
             "name": "schema_locality",
             "aria-label": "",
             "type": "text",
-            "instructions": "",
+            "instructions": "City or locality",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -492,11 +445,11 @@
             "name": "schema_postal_code",
             "aria-label": "",
             "type": "text",
-            "instructions": "",
+            "instructions": "Postal or ZIP code",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -513,7 +466,7 @@
             "name": "schema_price_range",
             "aria-label": "",
             "type": "text",
-            "instructions": "e.g., ££ or $$$",
+            "instructions": "Price range indicator (e.g., ££)",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -546,5 +499,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "show_in_rest": 0
+    "show_in_rest": 0,
+    "modified": 1766329726
 }

@@ -91,12 +91,11 @@ function lc_output_schema() {
 		// ORGANIZATION SCHEMA.
 		$schema = array(
 			'@context' => 'https://schema.org',
-			'@type'    => get_field( 'schema_business_type', 'options' ) ?: 'ProfessionalService',
+			'@type'    => get_field( 'schema_business_type', 'options' ) ? get_field( 'schema_business_type', 'options' ) : 'ProfessionalService',
 			'@id'      => home_url( '/#business' ),
 			'name'     => get_bloginfo( 'name' ),
 			'url'      => home_url( '/' ),
 		);
-
 		// Add description.
 		$description = get_bloginfo( 'description' );
 		if ( $description ) {

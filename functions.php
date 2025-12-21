@@ -1,14 +1,14 @@
 <?php
 /**
- * Understrap Child Theme functions and definitions
+ * LC MJP 2025 Child Theme functions and definitions
  *
- * @package UnderstrapChild
+ * @package lc-mjp2025
  */
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-define( 'LC_THEME_DIR', WP_CONTENT_DIR . '/themes/lc-mjp2025' );
+define( 'LC_THEME_DIR', get_stylesheet_directory() );
 
 require_once LC_THEME_DIR . '/inc/lc-theme.php';
 
@@ -25,12 +25,10 @@ function understrap_remove_scripts() {
 add_action( 'wp_enqueue_scripts', 'understrap_remove_scripts', 20 );
 
 
-/**
- * Enqueue our stylesheet and javascript file
- */
 
 /**
- * Enqueue child-theme.min.css late for override, with filemtime versioning.
+ * Enqueue child-theme.min.css with filemtime versioning.
+ * No dependencies to ensure immediate loading and prevent FOUC.
  */
 function lc_enqueue_theme_css() {
 	$rel = '/css/child-theme.min.css';
@@ -38,11 +36,12 @@ function lc_enqueue_theme_css() {
 	wp_enqueue_style(
 		'lc-theme',
 		get_stylesheet_directory_uri() . $rel,
-		array(),
+		array(), // No dependencies - load immediately.
 		file_exists( $abs ) ? filemtime( $abs ) : null
 	);
 }
-add_action( 'wp_enqueue_scripts', 'lc_enqueue_theme_css', 20 );
+// Load at default priority (10) for early rendering, after parent removal at priority 20.
+add_action( 'wp_enqueue_scripts', 'lc_enqueue_theme_css' );
 
 /**
  * Enqueue child-theme.min.js with filemtime versioning.
@@ -63,6 +62,7 @@ function lc_enqueue_theme_js() {
 add_action( 'wp_enqueue_scripts', 'lc_enqueue_theme_js', 20 );
 
 
+
 /**
  * Load the child theme's text domain
  */
@@ -70,6 +70,7 @@ function add_child_theme_textdomain() {
 	load_child_theme_textdomain( 'lc-mjp2025', get_stylesheet_directory() . '/languages' );
 }
 add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
+
 
 
 /**
