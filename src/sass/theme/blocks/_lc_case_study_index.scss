@@ -1,0 +1,27 @@
+.cs-index {
+    &__thumb {
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+        border-width: 3px;
+        border-style: solid;
+        border-color: transparent;
+        transition: border-color var(--transition);
+        img {
+            transition: var(--transition);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    
+    &__item {
+        &:hover {
+            .cs-index__thumb {
+                border-color: inherit;
+                img {
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+.related-cs {
+    &__item {
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        background-color: var(--col-grey);
+        padding: 1.5rem;
+        height: 100%;
+        border: 4px solid transparent;
+        transition: border-color var(--transition);
+
+        .h5 {
+            color: inherit;
+        }
+
+        p {
+            color: inherit;
+            font-size: var(--fs-200);
+        }
+        &:hover {
+            text-decoration: none;
+            border-color: var(--col-navy);
+        }
+    }
+}

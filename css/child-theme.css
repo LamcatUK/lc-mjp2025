@@ -22759,6 +22759,62 @@ header .dropdown.current-menu-item > .nav-link {
   object-fit: cover;
 }
 
+.cs-detail__grid {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.5rem 1rem;
+  position: relative;
+}
+.cs-detail__divider {
+  grid-column: 1/-1;
+  height: 1px;
+  background-color: var(--bs-border-color);
+}
+
+.cs-index__thumb {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  border-width: 3px;
+  border-style: solid;
+  border-color: transparent;
+  transition: border-color var(--transition);
+}
+.cs-index__thumb img {
+  transition: var(--transition);
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.cs-index__item:hover .cs-index__thumb {
+  border-color: inherit;
+}
+.cs-index__item:hover .cs-index__thumb img {
+  transform: scale(1.05);
+}
+
+.related-cs__item {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  background-color: var(--col-grey);
+  padding: 1.5rem;
+  height: 100%;
+  border: 4px solid transparent;
+  transition: border-color var(--transition);
+}
+.related-cs__item .h5 {
+  color: inherit;
+}
+.related-cs__item p {
+  color: inherit;
+  font-size: var(--fs-200);
+}
+.related-cs__item:hover {
+  text-decoration: none;
+  border-color: var(--col-navy);
+}
+
 .admin-bar header.fixed-top {
   top: 32px;
 }
