@@ -13,15 +13,15 @@ defined( 'ABSPATH' ) || exit;
 <div id="footer-top"></div>
 
 <footer class="footer pt-5 pb-3">
-    <div class="container">
-        <div class="row pb-4 g-4">
+	<div class="container">
+		<div class="row pb-4 g-4">
 			<div class="col-sm-3">
 				<img src="<?= esc_url( get_stylesheet_directory_uri() . '/img/mjp-logo.svg' ); ?>" alt="MJP Electrical Contractors Ltd." class="mb-4 d-block" width="100" height="89">
 				<div class="fs-tiny">Registered Address:<br><?= do_shortcode( '[contact_address]' ); ?></div>
-            </div>
-            <div class="col-sm-3">
+			</div>
+			<div class="col-sm-3">
 				<div class="footer-title">Services</div>
-                <?=
+				<?=
 				wp_nav_menu(
 					array(
 						'theme_location' => 'footer_menu1',
@@ -29,10 +29,10 @@ defined( 'ABSPATH' ) || exit;
 					)
 				);
 				?>
-            </div>
-            <div class="col-sm-3">
+			</div>
+			<div class="col-sm-3">
 				<div class="footer-title">Working With</div>
-                <?=
+				<?=
 				wp_nav_menu(
 					array(
 						'theme_location' => 'footer_menu2',
@@ -40,9 +40,9 @@ defined( 'ABSPATH' ) || exit;
 					)
 				);
 				?>
-            </div>
-            <div class="col-sm-3 footer__contact">
-                <div class="footer-title">Contact</div>
+			</div>
+			<div class="col-sm-3 footer__contact">
+				<div class="footer-title">Contact</div>
 				<ul class="fa-ul">
 					<li><span class="fa-li"><i class="far fa-envelope"></i></span> <?= do_shortcode( '[contact_email]' ); ?></li>
 					<li><span class="fa-li"><i class="fas fa-phone"></i></span> <?= do_shortcode( '[contact_phone]' ); ?></li>
@@ -57,18 +57,20 @@ defined( 'ABSPATH' ) || exit;
 						<img src="<?= esc_url( get_stylesheet_directory_uri() . '/img/which.png' ); ?>" class="mb-4" width="80" height="63" alt="Which Trusted Trader">
 					</a>
 				</div>
-            </div>
-        </div>
+			</div>
+		</div>
 
-        <div class="colophon d-flex justify-content-between align-items-center flex-wrap">
-            <div>
-                &copy; <?= esc_html( gmdate( 'Y' ) ); ?> MJP Electrical Contractors Limited. Registered in England, no. 12802391. VAT No. 362550604.
-            </div>
-            <div>
-				<a href="/terms-of-use/">Terms of use</a> | <a href="/privacy-policy/">Privacy</a> & <a href="/cookie-policy/">Cookies</a> |
-                Site by <a href="https://www.lamcat.co.uk/" rel="nofollow noopener" target="_blank">Lamcat</a>
-            </div>
-        </div>
+		<div class="colophon d-flex justify-content-between align-items-center flex-wrap">
+			<div>
+				&copy; <?= esc_html( gmdate( 'Y' ) ); ?> MJP Electrical Contractors Limited. Registered in England, no. 12802391. VAT No. 362550604.
+			</div>
+			<div>
+				<a href="/terms-of-use/">Terms of use</a> |
+				<a href="/wp-content/uploads/2025/12/which-complaints.policy.pdf" target="_blank">Complaints</a> |
+				<a href="/privacy-policy/">Privacy</a> & <a href="/cookie-policy/">Cookies</a> |
+				Site by <a href="https://www.lamcat.co.uk/" rel="nofollow noopener" target="_blank">Lamcat</a>
+			</div>
+		</div>
 </footer>
 <?php wp_footer(); ?>
 </body>

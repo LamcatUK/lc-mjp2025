@@ -17,56 +17,78 @@ function acf_blocks() {
 
 		// INSERT NEW BLOCKS HERE.
 
-        acf_register_block_type(
-            array(
-                'name'            => 'lc_related_case_studies',
-                'title'           => __( 'LC Related Case Studies' ),
-                'category'        => 'layout',
-                'icon'            => 'cover-image',
-                'render_template' => 'blocks/lc-related-case-studies.php',
-                'mode'            => 'edit',
-                'supports'        => array(
-                    'mode'      => false,
-                    'anchor'    => true,
-                    'className' => true,
-                    'align'     => true,
-                ),
-            )
-        );
+		acf_register_block_type(
+			array(
+				'name'            => 'lc_process_steps',
+				'title'           => __( 'LC Process Steps' ),
+				'category'        => 'layout',
+				'icon'            => 'cover-image',
+				'render_template' => 'blocks/lc-process-steps.php',
+				'mode'            => 'edit',
+				'supports'        => array(
+					'mode'      => false,
+					'anchor'    => true,
+					'className' => true,
+					'align'     => true,
+					'color'     => array(
+						'text'       => true,
+						'background' => true,
+						'gradients'  => false,
+					),
+				),
+			)
+		);
 
-        acf_register_block_type(
-            array(
-                'name'            => 'lc_case_study_index',
-                'title'           => __( 'LC Case Study Index' ),
-                'category'        => 'layout',
-                'icon'            => 'cover-image',
-                'render_template' => 'blocks/lc-case-study-index.php',
-                'mode'            => 'edit',
-                'supports'        => array(
-                    'mode'      => false,
-                    'anchor'    => true,
-                    'className' => true,
-                    'align'     => true,
-                ),
-            )
-        );
+		acf_register_block_type(
+			array(
+				'name'            => 'lc_related_case_studies',
+				'title'           => __( 'LC Related Case Studies' ),
+				'category'        => 'layout',
+				'icon'            => 'cover-image',
+				'render_template' => 'blocks/lc-related-case-studies.php',
+				'mode'            => 'edit',
+				'supports'        => array(
+					'mode'      => false,
+					'anchor'    => true,
+					'className' => true,
+					'align'     => true,
+				),
+			)
+		);
 
-        acf_register_block_type(
-            array(
-                'name'            => 'lc_case_study_detail',
-                'title'           => __( 'LC Case Study Detail' ),
-                'category'        => 'layout',
-                'icon'            => 'cover-image',
-                'render_template' => 'blocks/lc-case-study-detail.php',
-                'mode'            => 'edit',
-                'supports'        => array(
-                    'mode'      => false,
-                    'anchor'    => true,
-                    'className' => true,
-                    'align'     => true,
-                ),
-            )
-        );
+		acf_register_block_type(
+			array(
+				'name'            => 'lc_case_study_index',
+				'title'           => __( 'LC Case Study Index' ),
+				'category'        => 'layout',
+				'icon'            => 'cover-image',
+				'render_template' => 'blocks/lc-case-study-index.php',
+				'mode'            => 'edit',
+				'supports'        => array(
+					'mode'      => false,
+					'anchor'    => true,
+					'className' => true,
+					'align'     => true,
+				),
+			)
+		);
+
+		acf_register_block_type(
+			array(
+				'name'            => 'lc_case_study_detail',
+				'title'           => __( 'LC Case Study Detail' ),
+				'category'        => 'layout',
+				'icon'            => 'cover-image',
+				'render_template' => 'blocks/lc-case-study-detail.php',
+				'mode'            => 'edit',
+				'supports'        => array(
+					'mode'      => false,
+					'anchor'    => true,
+					'className' => true,
+					'align'     => true,
+				),
+			)
+		);
 
 		acf_register_block_type(
 			array(
