@@ -18,12 +18,12 @@ $level     = get_field( 'level' ) ? get_field( 'level' ) : 'h2';
 $classes = array();
 $style   = '';
 
-// if ( $bg ) {
-// 	$classes[] = 'has-' . sanitize_html_class( $bg ) . '-background-color';
-// }
-// if ( $fg ) {
-// 	$classes[] = 'has-' . sanitize_html_class( $fg ) . '-color';
-// }
+if ( $bg ) {
+	$classes[] = sanitize_html_class( $bg );
+}
+if ( $fg ) {
+	$classes[] = sanitize_html_class( $fg );
+}
 
 // Determine column order classes.
 $text_col_order  = 'order-md-1';
