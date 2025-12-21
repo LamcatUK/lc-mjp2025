@@ -15,6 +15,8 @@ $col_order = get_field( 'order' ) ? get_field( 'order' ) : 'Text Image';
 $split     = get_field( 'split' ) ? get_field( 'split' ) : '50 50';
 $level     = get_field( 'level' ) ? get_field( 'level' ) : 'h2';
 
+$shadow = in_array( 'Yes', (array) get_field( 'shadow' ), true ) ? 'ds-active' : '';
+
 $classes = array();
 $style   = '';
 
@@ -82,7 +84,7 @@ $block_uid = 'text-image-' . uniqid();
 			</div>
 			<div class="<?= esc_attr( $image_col_width . ' ' . $image_order_class ); ?>" data-aos="fade">
 				<div class="text-center">
-					<?= wp_get_attachment_image( get_field( 'image' ), 'full', false, array( 'class' => 'ds-active' ) ); ?>
+					<?= wp_get_attachment_image( get_field( 'image' ), 'full', false, array( 'class' => $shadow ) ); ?>
 				</div>
 			</div>
 		</div>
