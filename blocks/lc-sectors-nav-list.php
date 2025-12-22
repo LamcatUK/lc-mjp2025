@@ -42,30 +42,33 @@ if ( $fg ) {
 ?>
 <section class="sectors-list <?= esc_attr( implode( ' ', $classes ) ); ?>">
 	<div class="container py-5">
-		<?php
-		if ( get_field( 'title' ) ) {
-			?>
-		<h2 class="text-center"><?= esc_html( get_field( 'title' ) ); ?></h2>
-			<?php
-		}
-		if ( get_field( 'intro' ) ) {
-			?>
-		<div class="sectors-list__intro text-center mx-auto w-constrained-lg mb-5"><?= wp_kses_post( get_field( 'intro' ) ); ?></div>
-			<?php
-		}
-		?>
-		<div class="cols-lg-2">
-			<?php
-			foreach ( $sectors as $sector ) {
-				?>
-				<div>
-					<a class="mb-3 has-primary-900-color" href="<?= esc_url( get_permalink( $sector->ID ) ); ?>">
-						<h3 class="sectors-list__title"><?= esc_html( $sector->post_title ); ?></h3>
-					</a>
-				</div>
+		<div class="row g-5">
+			<div class="col-lg-6">
 				<?php
-			}
-			?>
+				if ( get_field( 'title' ) ) {
+					?>
+				<h2 class="text-center"><?= esc_html( get_field( 'title' ) ); ?></h2>
+					<?php
+				}
+				if ( get_field( 'intro' ) ) {
+					?>
+				<div class="sectors-list__intro text-center mx-auto w-constrained-lg"><?= wp_kses_post( get_field( 'intro' ) ); ?></div>
+					<?php
+				}
+				?>
+			</div>
+			<div class="col-lg-6">
+				<?php
+				foreach ( $sectors as $sector ) {
+					?>
+					<li>
+						<a class="mb-3 has-primary-900-color" href="<?= esc_url( get_permalink( $sector->ID ) ); ?>">
+							<h3 class="sectors-list__title"><?= esc_html( $sector->post_title ); ?></h3>
+						</a>
+					</li>
+					<?php
+				}
+				?>
 			</div>
 		</div>
 	</div>
