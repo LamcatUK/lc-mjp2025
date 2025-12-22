@@ -31,6 +31,20 @@
                 "operator": "==",
                 "value": "9"
             }
+        ],
+        [
+            {
+                "param": "page_parent",
+                "operator": "==",
+                "value": "17"
+            }
+        ],
+        [
+            {
+                "param": "page_parent",
+                "operator": "==",
+                "value": "21"
+            }
         ]
     ],
     "menu_order": 0,
@@ -42,5 +56,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1759501602
+    "modified": 1766410042
 }
