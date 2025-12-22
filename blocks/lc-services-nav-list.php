@@ -60,11 +60,11 @@ if ( $fg ) {
 			<?php
 			foreach ( $services as $service ) {
 				?>
-				<li class="mb-3">
-					<a class="service-list__link" href="<?= esc_url( get_permalink( $service->ID ) ); ?>">
+				<div>
+					<a class="mb-3 has-primary-900-color" href="<?= esc_url( get_permalink( $service->ID ) ); ?>">
 						<h3 class="service-list__title"><?= esc_html( $service->post_title ); ?></h3>
 					</a>
-				</li>
+				</div>
 				<?php
 			}
 			?>
