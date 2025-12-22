@@ -54,7 +54,7 @@ if ( $fg ) {
 			<?php
 		}
 		?>
-		<div class="cols-lg-3">
+		<div class="cols-lg-2">
 			<?php
 			foreach ( $sectors as $sector ) {
 				?>
