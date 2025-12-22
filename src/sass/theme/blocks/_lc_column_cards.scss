@@ -29,6 +29,9 @@
         outline: 2px solid var(--col-accent-400);
         outline-offset: 2px;
       }
+      .fw-body {
+        padding-inline-end: 3rem;
+      }
     }
 
     &__arrow {

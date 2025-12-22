@@ -22644,6 +22644,9 @@ header .dropdown.current-menu-item > .nav-link {
   outline: 2px solid var(--col-accent-400);
   outline-offset: 2px;
 }
+.col-cards .col-card--linked .fw-body {
+  padding-inline-end: 3rem;
+}
 .col-cards .col-card__arrow {
   position: absolute;
   top: 0;
