@@ -18,7 +18,7 @@ if ( $fg ) {
 	$classes[] = sanitize_html_class( $fg );
 }
 ?>
-<section class="trust-icons py-4 <?= esc_attr( implode( ' ', $classes ) ); ?>">
+<section class="trust-icons py-5 <?= esc_attr( implode( ' ', $classes ) ); ?>">
 	<div class="container">
 		<div class="text-muted text-center fw-semibold mb-4">Accreditation &amp; assurance</div>
 		<div class="row">
