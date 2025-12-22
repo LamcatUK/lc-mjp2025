@@ -21,8 +21,21 @@ $children = get_posts(
 if ( ! $children ) {
 	return;
 }
+
+// Support Gutenberg color picker.
+$bg = ! empty( $block['backgroundColor'] ) ? 'has-' . $block['backgroundColor'] . '-background-color' : '';
+$fg = ! empty( $block['textColor'] ) ? 'has-' . $block['textColor'] . '-color' : '';
+
+$classes = array();
+if ( $bg ) {
+	$classes[] = sanitize_html_class( $bg );
+}
+if ( $fg ) {
+	$classes[] = sanitize_html_class( $fg );
+}
+
 ?>
-<section class="child-cards">
+<section class="child-cards <?php echo esc_attr( implode( ' ', $classes ) ); ?>">
 	<div class="container py-5">
 		<?php
 		if ( get_field( 'title' ) ) {

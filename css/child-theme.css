@@ -22683,9 +22683,6 @@ header .dropdown.current-menu-item > .nav-link {
   color: var(--col-accent-400);
 }
 
-.child-cards {
-  background-color: var(--col-secondary-100);
-}
 .child-cards__card {
   position: relative;
   isolation: isolate;
