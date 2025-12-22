@@ -43,6 +43,7 @@ if ( ! $children ) {
 			// if /3 then three cols, if /2 then two cols.
 			$cols = count( $children ) % 3 === 0 ? 3 : 2;
 			foreach ( $children as $child ) {
+				$subtitle = get_field( 'service_subtitle', $child->ID ) ? get_field( 'service_subtitle', $child->ID ) : get_field( 'sector_subtitle', $child->ID );
 				?>
 				<div class="col-lg-<?= esc_attr( 12 / $cols ); ?>">
 					<a class="child-cards__card" href="<?= esc_url( get_permalink( $child->ID ) ); ?>">
@@ -52,7 +53,7 @@ if ( ! $children ) {
 						<div class="overlay"></div>
 						<div class="child-cards__content">
 							<h3 class="child-cards__title"><?= esc_html( $child->post_title ); ?></h3>
-							<div class="child-cards__subtitle"><?= esc_html( get_field( 'sector_subtitle', $child->ID ) ); ?></div>
+							<div class="child-cards__subtitle"><?= esc_html( $subtitle ); ?></div>
 						</div>
 					</a>
 				</div>
