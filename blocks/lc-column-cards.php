@@ -11,9 +11,12 @@ defined( 'ABSPATH' ) || exit;
 $bg = ! empty( $block['backgroundColor'] ) ? 'has-' . $block['backgroundColor'] . '-background-color' : '';
 $fg = ! empty( $block['textColor'] ) ? 'has-' . $block['textColor'] . '-color' : '';
 
+$card_class = 'has-secondary-100-background-color';
+
 $classes = array();
 if ( $bg ) {
 	$classes[] = sanitize_html_class( $bg );
+	$card_class = '';
 }
 if ( $fg ) {
 	$classes[] = sanitize_html_class( $fg );
@@ -35,7 +38,7 @@ $cols = get_field( 'columns' ) ? get_field( 'columns' ) : 'three';
 					?>
 					<div class="<?= esc_attr( 'two' === $cols ? 'col-12 col-md-6' : 'col-12 col-md-4' ); ?>">
 						<?php if ( $card_link ) : ?>
-							<a href="<?= esc_url( $card_link['url'] ); ?>" class="col-card col-card--linked" 
+							<a href="<?= esc_url( $card_link['url'] ); ?>" class="col-card col-card--linked <?= esc_attr( $card_class ); ?>" 
 								<?= $card_link['target'] ? 'target="' . esc_attr( $card_link['target'] ) . '"' : ''; ?>
 								<?= $card_link['title'] ? 'title="' . esc_attr( $card_link['title'] ) . '"' : ''; ?>>
 								<h3 class="fs-subtle"><?= wp_kses_post( get_sub_field( 'title' ) ); ?></h3>
@@ -43,7 +46,7 @@ $cols = get_field( 'columns' ) ? get_field( 'columns' ) : 'three';
 								<span class="col-card__arrow" aria-hidden="true"><i class="fas fa-chevron-right fa-2x"></i></span>
 							</a>
 						<?php else : ?>
-							<div class="col-card">
+							<div class="col-card <?= esc_attr( $card_class ); ?>">
 								<h3 class="fs-subtle"><?= wp_kses_post( get_sub_field( 'title' ) ); ?></h3>
 								<div class="fs-body fw-thin"><?= wp_kses_post( get_sub_field( 'content' ) ); ?></div>
 							</div>
