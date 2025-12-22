@@ -58,11 +58,11 @@ if ( $fg ) {
 			<?php
 			foreach ( $sectors as $sector ) {
 				?>
-				<li class="mb-3">
-					<a class="sectors-list__card" href="<?= esc_url( get_permalink( $sector->ID ) ); ?>">
-							<h3 class="sectors-list__title"><?= esc_html( $sector->post_title ); ?></h3>
+				<div>
+					<a class="mb-3 has-primary-900-color" href="<?= esc_url( get_permalink( $sector->ID ) ); ?>">
+						<h3 class="sectors-list__title"><?= esc_html( $sector->post_title ); ?></h3>
 					</a>
-				</li>
+				</div>
 				<?php
 			}
 			?>
