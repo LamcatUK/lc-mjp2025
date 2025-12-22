@@ -47,12 +47,12 @@ if ( $fg ) {
 				<?php
 				if ( get_field( 'title' ) ) {
 					?>
-				<h2 class="text-center"><?= esc_html( get_field( 'title' ) ); ?></h2>
+				<h2><?= esc_html( get_field( 'title' ) ); ?></h2>
 					<?php
 				}
 				if ( get_field( 'intro' ) ) {
 					?>
-				<div class="sectors-list__intro text-center mx-auto w-constrained-lg"><?= wp_kses_post( get_field( 'intro' ) ); ?></div>
+				<div class="sectors-list__intro w-constrained-lg"><?= wp_kses_post( get_field( 'intro' ) ); ?></div>
 					<?php
 				}
 				?>
