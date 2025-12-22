@@ -21758,6 +21758,18 @@ strong {
   font-weight: var(--fw-accent);
 }
 
+.lh-normal {
+  line-height: var(--lh-normal);
+}
+
+.lh-snug {
+  line-height: var(--lh-snug);
+}
+
+.lh-tight {
+  line-height: var(--lh-tight);
+}
+
 /* =========================
    COLOURS — utilities
    ========================= */

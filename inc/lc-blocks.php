@@ -17,6 +17,50 @@ function acf_blocks() {
 
 		// INSERT NEW BLOCKS HERE.
 
+        acf_register_block_type(
+            array(
+                'name'            => 'lc_trust_icons',
+                'title'           => __( 'LC Trust Icons' ),
+                'category'        => 'layout',
+                'icon'            => 'cover-image',
+                'render_template' => 'blocks/lc-trust-icons.php',
+                'mode'            => 'edit',
+                'supports'        => array(
+                    'mode'      => false,
+                    'anchor'    => true,
+                    'className' => true,
+                    'align'     => true,
+					'color'     => array(
+						'text'       => true,
+						'background' => true,
+						'gradients'  => false,
+					),
+                ),
+            )
+        );
+
+		acf_register_block_type(
+			array(
+				'name'            => 'lc_trust_bar',
+				'title'           => __( 'LC Trust Bar' ),
+				'category'        => 'layout',
+				'icon'            => 'cover-image',
+				'render_template' => 'blocks/lc-trust-bar.php',
+				'mode'            => 'edit',
+				'supports'        => array(
+					'mode'      => false,
+					'anchor'    => true,
+					'className' => true,
+					'align'     => true,
+					'color'     => array(
+						'text'       => true,
+						'background' => true,
+						'gradients'  => false,
+					),
+				),
+			)
+		);
+
 		acf_register_block_type(
 			array(
 				'name'            => 'lc_process_steps',
