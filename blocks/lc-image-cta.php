@@ -26,7 +26,13 @@ $image = wp_get_attachment_image( get_field( 'image' ), 'full', false, array( 'c
 		<div class="row h-100 align-items-center">
 			<div class="col-md-7">
 				<h2 class="h1 image-cta__title"><?= esc_html( get_field( 'title' ) ); ?></h2>
-				<div class="image-cta__description"><?= esc_html( get_field( 'content' ) ); ?></div>
+				<?php
+				if ( get_field( 'content' ) ) {
+					?>
+					<div class="image-cta__description"><?= esc_html( get_field( 'content' ) ); ?></div>
+					<?php
+				}
+				?>
 			</div>
 			<div class="col-md-5 text-center my-auto">
 				<a class="btn btn--primary" href="<?= esc_url( $cta['url'] ); ?>" target="<?= esc_attr( $cta['target'] ); ?>"><?= esc_html( $cta['title'] ); ?></a>
