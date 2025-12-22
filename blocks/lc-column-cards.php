@@ -15,7 +15,7 @@ $card_class = 'has-secondary-100-background-color';
 
 $classes = array();
 if ( $bg ) {
-	$classes[] = sanitize_html_class( $bg );
+	$classes[]  = sanitize_html_class( $bg );
 	$card_class = '';
 }
 if ( $fg ) {
