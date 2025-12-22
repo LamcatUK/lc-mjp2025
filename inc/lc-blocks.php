@@ -322,6 +322,11 @@ function acf_blocks() {
 					'anchor'    => true,
 					'className' => true,
 					'align'     => true,
+					'color'     => array(
+						'text'       => true,
+						'background' => true,
+						'gradients'  => false,
+					),
 				),
 			)
 		);
