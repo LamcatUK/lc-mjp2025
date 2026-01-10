@@ -50,13 +50,13 @@ $terms = get_terms(
 				$q->the_post();
 				$work_type_terms = get_the_terms( get_the_ID(), 'work_type' );
 				$work_type_slugs = array();
-				
+
 				if ( $work_type_terms && ! is_wp_error( $work_type_terms ) ) {
 					foreach ( $work_type_terms as $work_term ) {
 						$work_type_slugs[] = esc_attr( $work_term->slug );
 					}
 				}
-				
+
 				$data_attr = ! empty( $work_type_slugs ) ? 'data-work-type="' . implode( ' ', $work_type_slugs ) . '"' : '';
 				?>
 				<div class="col-md-4 cs-index__item" <?= wp_kses_post( $data_attr ); ?>>

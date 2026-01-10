@@ -28,8 +28,8 @@ get_header();
 				<?php
 				foreach ( get_field( 'case_study_gallery' ) as $image ) {
 					?>
-				<div class="col-md-4 mb-4 gallery-item-wrapper">
-					<a href="<?= esc_url( wp_get_attachment_image_url( $image, 'full' ) ); ?>" class="work__link image-16x9 glightbox" data-gallery="work-gallery-all" data-type="image">
+				<div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 gallery-item-wrapper">
+					<a href="<?= esc_url( wp_get_attachment_image_url( $image, 'full' ) ); ?>" class="work__link image-3x4 glightbox" data-gallery="work-gallery-all" data-type="image">
 						<?= wp_get_attachment_image( $image, 'large', false, array( 'class' => 'work__image' ) ); ?>
 					</a>
 				</div>
