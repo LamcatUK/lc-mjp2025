@@ -22787,7 +22787,7 @@ header .dropdown.current-menu-item > .nav-link {
   background-color: var(--col-secondary-100);
 }
 .cs-index__thumb {
-  aspect-ratio: 4/3;
+  aspect-ratio: 3/4;
   overflow: hidden;
   border-width: 3px;
   border-style: solid;
