@@ -49,7 +49,7 @@ get_header();
 					<div class="image-cta__description">If a design has caught your eye, we can create a tailored solution for your property. From gates to full entrance installations, our team is here to help.</div>
 				</div>
 				<div class="col-md-5 text-center my-auto">
-					<a class="btn btn--primary" href="/request-survey/" target="_self">Request a Survey</a>
+					<a class="btn btn--primary" href="/contact/" target="_self">Contact us today</a>
 				</div>
 			</div>
 		</div>

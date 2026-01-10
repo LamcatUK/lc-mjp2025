@@ -65,7 +65,6 @@ defined( 'ABSPATH' ) || exit;
 				&copy; <?= esc_html( gmdate( 'Y' ) ); ?> MJP Electrical Contractors Limited. Registered in England, no. 12802391. VAT No. 362550604.
 			</div>
 			<div>
-				<a href="/terms-of-use/">Terms of use</a> |
 				<a href="/wp-content/uploads/2025/12/which-complaints.policy.pdf" target="_blank">Complaints</a> |
 				<a href="/privacy-policy/">Privacy</a> & <a href="/cookie-policy/">Cookies</a> |
 				Site by <a href="https://www.lamcat.co.uk/" rel="nofollow noopener" target="_blank">Lamcat</a>
