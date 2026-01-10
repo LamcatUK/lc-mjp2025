@@ -8,4 +8,13 @@
       color: var(--col-accent-400);
     }
   }
+  .social-icons {
+    a {
+      color: var(--col-accent-400);
+      transition: color var(--transition);
+      &:hover {
+        color: var(--col-black);
+      }
+    }
+  }
 }

@@ -22685,6 +22685,13 @@ header .dropdown.current-menu-item > .nav-link {
 .contact a:hover {
   color: var(--col-accent-400);
 }
+.contact .social-icons a {
+  color: var(--col-accent-400);
+  transition: color var(--transition);
+}
+.contact .social-icons a:hover {
+  color: var(--col-black);
+}
 
 .child-cards__card {
   position: relative;
