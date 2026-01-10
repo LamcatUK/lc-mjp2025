@@ -246,3 +246,11 @@ a.image-16x9 {
 .ds-active {
   box-shadow: var(--shadow-active);
 }
+
+.case-study {
+  &__card {
+    background-color: var(--col-secondary-100);
+    padding: 2rem;
+    box-shadow: var(--shadow-in);
+  }
+}

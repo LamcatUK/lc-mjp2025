@@ -23056,6 +23056,12 @@ a.image-16x9:hover img {
   box-shadow: var(--shadow-active);
 }
 
+.case-study__card {
+  background-color: var(--col-secondary-100);
+  padding: 2rem;
+  box-shadow: var(--shadow-in);
+}
+
 .has-blue-color,
 .has-blue-color:visited {
   color: #0d6efd;

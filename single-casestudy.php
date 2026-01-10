@@ -20,11 +20,11 @@ get_header();
 	</section>
 	<article>
 		<div class="container">
-			<h1><?= esc_html( get_the_title() ); ?></h1>
 			<div class="case-study__card">
+				<h1><?= esc_html( get_the_title() ); ?></h1>
 				<?php the_content(); ?>
 			</div>
-			<div class="row" id="gallery_items">
+			<div class="row py-5" id="gallery_items">
 				<?php
 				foreach ( get_field( 'case_study_gallery' ) as $image ) {
 					?>
@@ -39,6 +39,21 @@ get_header();
 			</div>
 		</div>
 	</article>
+	<section class="image-cta">
+		<img src="<?= get_stylesheet_directory_uri() . '/img/cta-bg.jpg'; ?>" alt="" class="image-cta__image" />
+		<div class="image-cta__overlay"></div>
+		<div class="image-cta__content container">
+			<div class="row h-100 align-items-center">
+				<div class="col-md-7">
+					<h2 class="h1 image-cta__title">Inspired by our recent projects?</h2>
+					<div class="image-cta__description">If a design has caught your eye, we can create a tailored solution for your property. From gates to full entrance installations, our team is here to help.</div>
+				</div>
+				<div class="col-md-5 text-center my-auto">
+					<a class="btn btn--primary" href="/request-survey/" target="_self">Request a Survey</a>
+				</div>
+			</div>
+		</div>
+	</section>
 </main>
 <?php
 add_action(
