@@ -65,30 +65,30 @@ if ( $query->have_posts() ) {
 	}
 	wp_reset_postdata();
 
-	// Build final image list with minimum 8 images
+	// Build final image list with minimum 8 images.
 	$final_images = array();
 	$min_images = 8;
-	
+
 	if ( ! empty( $all_images ) ) {
 		$case_study_count = count( $all_images );
 		$current_index = 0;
-		
-		// Interleave images from all case studies
+
+		// Interleave images from all case studies.
 		while ( count( $final_images ) < $min_images ) {
 			$case_study = $all_images[ $current_index % $case_study_count ];
-			
-			// Get next available image from this case study
+
+			// Get next available image from this case study.
 			$image_index = floor( $current_index / $case_study_count ) % count( $case_study['images'] );
 			$image_id = $case_study['images'][ $image_index ];
-			
+
 			$final_images[] = array(
 				'image_id' => $image_id,
 				'post_url' => $case_study['post_url'],
 			);
-			
-			$current_index++;
-			
-			// Safety check to prevent infinite loop
+
+			++$current_index;
+
+			// Safety check to prevent infinite loop.
 			if ( $current_index > $min_images * $case_study_count * 10 ) {
 				break;
 			}
