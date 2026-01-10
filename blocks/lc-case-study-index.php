@@ -11,7 +11,7 @@ $q = new WP_Query(
 	array(
 		'post_type'      => 'casestudy',
 		'posts_per_page' => -1,
-		'orderby'        => 'menu_order',
+		'orderby'        => 'date',
 		'order'          => 'DESC',
 	)
 );
