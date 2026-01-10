@@ -72,7 +72,7 @@ function lc_register_post_types() {
 			'capability_type'    => 'post',
 			'map_meta_cap'       => true,
 			'rewrite'            => array(
-				'slug'       => 'case-studies',
+				'slug'       => 'projects',
 				'with_front' => false,
 			),
 		),

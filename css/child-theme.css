@@ -22783,6 +22783,9 @@ header .dropdown.current-menu-item > .nav-link {
   background-color: var(--bs-border-color);
 }
 
+.cs-index {
+  background-color: var(--col-secondary-100);
+}
 .cs-index__thumb {
   aspect-ratio: 4/3;
   overflow: hidden;
@@ -22797,6 +22800,15 @@ header .dropdown.current-menu-item > .nav-link {
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
+}
+.cs-index__item-link {
+  text-decoration: none;
+}
+.cs-index__item-title {
+  color: var(--col-primary-900) !important;
+}
+.cs-index__item:hover .cs-index__item-link {
+  text-decoration: none;
 }
 .cs-index__item:hover .cs-index__thumb {
   border-color: inherit;
@@ -22882,6 +22894,10 @@ body {
   font-size: var(--text-xs);
   font-weight: var(--fw-500);
   color: var(--col-accent-500);
+}
+
+.case-study {
+  margin-top: var(--h-top);
 }
 
 .blog {

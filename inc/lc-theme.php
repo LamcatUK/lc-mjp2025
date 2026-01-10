@@ -160,22 +160,21 @@ function lc_dashboard_widget_display() {
 	<?php
 }
 
-// phpcs:disable
-// add_filter('wpseo_breadcrumb_links', function( $links ) {
-//     global $post;
-//     if ( is_singular( 'post' ) ) {
-//         $t = get_the_category($post->ID);
-//         $breadcrumb[] = array(
-//             'url' => '/guides/',
-//             'text' => 'Guides',
-//         );
-
-//         array_splice( $links, 1, -2, $breadcrumb );
-//     }
-//     return $links;
-// }
-// );
-// phpcs:enable
+add_filter(
+	'wpseo_breadcrumb_links',
+	function ( $links ) {
+		global $post;
+		if ( is_singular( 'casestudy' ) ) {
+			$t            = get_the_category($post->ID);
+			$breadcrumb[] = array(
+				'url'  => '/projects/',
+				'text' => 'Projects',
+			);
+			array_splice( $links, 1, -2, $breadcrumb );
+		}
+		return $links;
+	}
+);
 
 
 /**
