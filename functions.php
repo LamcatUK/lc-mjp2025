@@ -102,18 +102,18 @@ function understrap_child_customize_controls_js() {
 }
 add_action( 'customize_controls_enqueue_scripts', 'understrap_child_customize_controls_js' );
 
-add_action('init', function () {
-    $taxonomy = 'work_type';
+// add_action('init', function () {
+//     $taxonomy = 'work_type';
 
-    $terms = get_terms(array(
-        'taxonomy'   => $taxonomy,
-        'hide_empty' => false,
-    ));
+//     $terms = get_terms(array(
+//         'taxonomy'   => $taxonomy,
+//         'hide_empty' => false,
+//     ));
 
-    foreach ($terms as $term) {
-        wp_update_term_count_now(
-            array($term->term_id),
-            $taxonomy
-        );
-    }
-});
+//     foreach ($terms as $term) {
+//         wp_update_term_count_now(
+//             array($term->term_id),
+//             $taxonomy
+//         );
+//     }
+// });
