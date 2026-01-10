@@ -59,7 +59,7 @@ $terms = get_terms(
 
 				$data_attr = ! empty( $work_type_slugs ) ? 'data-work-type="' . implode( ' ', $work_type_slugs ) . '"' : '';
 				?>
-				<div class="col-md-4 cs-index__item" <?= wp_kses_post( $data_attr ); ?>>
+				<div class="col-sm-6 col-md-4 col-lg-3 cs-index__item" <?= wp_kses_post( $data_attr ); ?>>
 					<a href="<?= esc_url( get_permalink() ); ?>" class="cs-index__item-link">
 						<div class="cs-index__thumb">
 							<?= get_the_post_thumbnail( get_the_ID(), 'large' ); ?>
