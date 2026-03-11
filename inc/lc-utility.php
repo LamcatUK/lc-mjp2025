@@ -778,3 +778,70 @@ function lc_cf7_honeypot_validation_filter( $result, $tag ) {
 
 	return $result;
 }
+
+/**
+ * Adds hidden timing fields to Contact Form 7 forms.
+ *
+ * The timestamp is signed to prevent client-side tampering.
+ *
+ * @param array $hidden_fields Existing hidden fields.
+ * @return array Updated hidden fields.
+ */
+function lc_cf7_add_timing_hidden_fields( $hidden_fields ) {
+	$issued_at = (string) time();
+
+	$hidden_fields['_lc_cf7_issued_at'] = $issued_at;
+	$hidden_fields['_lc_cf7_issued_sig'] = hash_hmac( 'sha256', $issued_at, wp_salt( 'auth' ) );
+
+	return $hidden_fields;
+}
+add_filter( 'wpcf7_form_hidden_fields', 'lc_cf7_add_timing_hidden_fields' );
+
+/**
+ * Flags Contact Form 7 submissions as spam when submitted too quickly.
+ *
+ * @param bool $spam Existing spam decision.
+ * @return bool Updated spam decision.
+ */
+function lc_cf7_form_fill_time_spam_filter( $spam ) {
+	if ( $spam ) {
+		return true;
+	}
+
+	$minimum_seconds = (int) apply_filters( 'lc_cf7_minimum_fill_seconds', 4 );
+
+	// We don't need nonce verification here as this is handled by CF7.
+	// phpcs:ignore WordPress.Security.NonceVerification.Missing
+	$issued_at_raw = isset( $_POST['_lc_cf7_issued_at'] ) ? sanitize_text_field( wp_unslash( $_POST['_lc_cf7_issued_at'] ) ) : '';
+
+	// We don't need nonce verification here as this is handled by CF7.
+	// phpcs:ignore WordPress.Security.NonceVerification.Missing
+	$issued_sig_raw = isset( $_POST['_lc_cf7_issued_sig'] ) ? sanitize_text_field( wp_unslash( $_POST['_lc_cf7_issued_sig'] ) ) : '';
+
+	if ( '' === $issued_at_raw || '' === $issued_sig_raw ) {
+		return true;
+	}
+
+	if ( ! ctype_digit( $issued_at_raw ) ) {
+		return true;
+	}
+
+	if ( ! preg_match( '/^[a-f0-9]{64}$/', $issued_sig_raw ) ) {
+		return true;
+	}
+
+	$expected_sig = hash_hmac( 'sha256', $issued_at_raw, wp_salt( 'auth' ) );
+
+	if ( ! hash_equals( $expected_sig, $issued_sig_raw ) ) {
+		return true;
+	}
+
+	$elapsed_seconds = time() - (int) $issued_at_raw;
+
+	if ( $elapsed_seconds < $minimum_seconds ) {
+		return true;
+	}
+
+	return false;
+}
+add_filter( 'wpcf7_spam', 'lc_cf7_form_fill_time_spam_filter' );
