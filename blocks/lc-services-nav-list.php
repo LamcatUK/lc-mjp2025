@@ -40,7 +40,7 @@ if ( $fg ) {
 }
 
 ?>
-<section class="service-list <?= esc_attr( implode( ' ', $classes ) ); ?>">
+<section class="service-list sectors-list <?= esc_attr( implode( ' ', $classes ) ); ?>">
 	<div class="container py-5">
 		<?php
 		if ( get_field( 'title' ) ) {
@@ -56,18 +56,15 @@ if ( $fg ) {
 			<?php
 		}
 		?>
-		<div class="cols-lg-3">
-			<?php
-			foreach ( $services as $service ) {
-				?>
-				<div>
-					<a class="mb-3 has-primary-900-color" href="<?= esc_url( get_permalink( $service->ID ) ); ?>">
-						<h3 class="service-list__title"><?= esc_html( $service->post_title ); ?></h3>
-					</a>
-				</div>
-				<?php
-			}
-			?>
-		</div>
+		<ul class="sectors-list__list sectors-list__list--cols">
+			<?php foreach ( $services as $service ) { ?>
+			<li>
+				<a class="sectors-list__link <?= esc_attr( $card_class ); ?>" href="<?= esc_url( get_permalink( $service->ID ) ); ?>">
+					<h3 class="sectors-list__title fs-subtle"><?= esc_html( html_entity_decode( $service->post_title, ENT_QUOTES, 'UTF-8' ) ); ?></h3>
+					<span class="sectors-list__arrow" aria-hidden="true"><i class="fas fa-chevron-right fa-2x"></i></span>
+				</a>
+			</li>
+			<?php } ?>
+		</ul>
 	</div>
 </section>
