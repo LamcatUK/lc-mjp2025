@@ -152,6 +152,10 @@ function lc_theme_enqueue() {
 	wp_enqueue_style( 'glightbox-style', 'https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.3.1/css/glightbox.min.css', array(), $the_theme->get( 'Version' ) );
 	wp_enqueue_script( 'glightbox', 'https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.3.1/js/glightbox.min.js', array(), $the_theme->get( 'Version' ), true );
 
+	if ( get_field( 'ga_property', 'options' ) && ! is_user_logged_in() ) {
+		wp_enqueue_script( 'lc-tracking', get_stylesheet_directory_uri() . '/js/lc-tracking.js', array(), filemtime( get_stylesheet_directory() . '/js/lc-tracking.js' ), true );
+	}
+
 	wp_deregister_script( 'jquery' );
 }
 add_action( 'wp_enqueue_scripts', 'lc_theme_enqueue' );
