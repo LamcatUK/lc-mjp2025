@@ -903,3 +903,19 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 	<?php
 }
+
+
+/**
+ * Returns the image IDs from a case study's gallery block.
+ *
+ * @param int $post_id Case study post ID.
+ * @return int[]
+ */
+function lc_get_case_study_gallery( $post_id ) {
+	foreach ( parse_blocks( get_post_field( 'post_content', $post_id ) ) as $block ) {
+		if ( 'acf/lc-case-study-gallery' === $block['blockName'] ) {
+			return array_map( 'intval', array_filter( (array) ( $block['attrs']['data']['gallery'] ?? array() ) ) );
+		}
+	}
+	return array();
+}

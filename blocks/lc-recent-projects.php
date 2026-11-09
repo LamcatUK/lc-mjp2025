@@ -55,7 +55,7 @@ if ( $query->have_posts() ) {
 	$all_images = array();
 	while ( $query->have_posts() ) {
 		$query->the_post();
-		$gallery = get_field( 'case_study_gallery', get_the_ID() );
+		$gallery = lc_get_case_study_gallery( get_the_ID() );
 		if ( $gallery && is_array( $gallery ) && ! empty( $gallery ) ) {
 			$all_images[] = array(
 				'images' => $gallery,

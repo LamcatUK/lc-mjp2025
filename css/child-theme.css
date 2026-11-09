@@ -22790,33 +22790,6 @@ header .dropdown.current-menu-item > .nav-link {
   padding: 1rem;
 }
 
-.team__person {
-  box-shadow: var(--shadow-active);
-}
-.team__name {
-  font-weight: 600;
-  font-size: var(--fs-subtle);
-  line-height: var(--lh-snug);
-  margin-bottom: 4px;
-}
-.team__role {
-  font-weight: 400;
-  font-size: var(--fs-meta);
-  line-height: var(--lh-snug);
-}
-.team__detail {
-  background-color: var(--col-primary-900);
-  color: var(--col-white);
-  padding: 1rem;
-}
-.team__photo {
-  aspect-ratio: 1/1;
-  width: 100%;
-  height: auto;
-  -o-object-fit: cover;
-  object-fit: cover;
-}
-
 .cs-detail__grid {
   display: grid;
   grid-template-columns: max-content 1fr;
