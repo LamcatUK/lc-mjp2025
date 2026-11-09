@@ -12,9 +12,7 @@ get_header();
 	<div class="container pt-4 pb-5">
 		<section class="breadcrumbs fs-ui mb-4">
         <?php
-        if ( function_exists( 'yoast_breadcrumb' ) ) {
-            yoast_breadcrumb( '<div id="breadcrumbs" class="my-2">', '</div>' );
-        }
+        lc_breadcrumbs();
         ?>
 	    </section>
 		<div class="row">

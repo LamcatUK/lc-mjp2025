@@ -12,7 +12,6 @@ defined( 'ABSPATH' ) || exit;
 require_once LC_THEME_DIR . '/inc/lc-utility.php';
 require_once LC_THEME_DIR . '/inc/lc-block-usage.php';
 require_once LC_THEME_DIR . '/inc/lc-acf-theme-palette.php';
-require_once LC_THEME_DIR . '/inc/lc-schema.php';
 require_once LC_THEME_DIR . '/inc/lc-posttypes.php';
 require_once LC_THEME_DIR . '/inc/lc-taxonomies.php';
 
@@ -159,23 +158,6 @@ function lc_dashboard_widget_display() {
 	</div>
 	<?php
 }
-
-add_filter(
-	'wpseo_breadcrumb_links',
-	function ( $links ) {
-		global $post;
-		if ( is_singular( 'casestudy' ) ) {
-			$t            = get_the_category($post->ID);
-			$breadcrumb[] = array(
-				'url'  => '/projects/',
-				'text' => 'Projects',
-			);
-			array_splice( $links, 1, -2, $breadcrumb );
-		}
-		return $links;
-	}
-);
-
 
 /**
  * Enqueues theme-specific scripts and styles.

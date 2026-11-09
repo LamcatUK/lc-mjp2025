@@ -553,9 +553,9 @@ function display_page_hierarchy( $parent_id = 0 ) {
 		$output .= '<ul>';
 		foreach ( $pages as $page ) {
 			// Check index status.
-			$noindex = get_post_meta( $page->ID, '_yoast_wpseo_meta-robots-noindex', true );
+			$noindex = get_post_meta( $page->ID, 'lcp_yeast_seo_robots_index', true );
 
-			if ( '1' !== $noindex ) {
+			if ( 'noindex' !== $noindex ) {
 				$output .= '<li><a href="' . get_permalink( $page->ID ) . '">' . $page->post_title . '</a>';
 
 				// Recursively display child pages, also sorted by title.
@@ -845,3 +845,42 @@ function lc_cf7_form_fill_time_spam_filter( $spam ) {
 	return false;
 }
 add_filter( 'wpcf7_spam', 'lc_cf7_form_fill_time_spam_filter' );
+
+/**
+ * Outputs a visual breadcrumb trail for the current singular view.
+ *
+ * Schema for the trail is handled by the Yeast SEO plugin.
+ *
+ * @return void
+ */
+function lc_breadcrumbs() {
+	$trail = array(
+		array(
+			'name' => 'Home',
+			'url'  => home_url( '/' ),
+		),
+	);
+
+	if ( is_singular( 'casestudy' ) ) {
+		$projects = get_page_by_path( 'projects' );
+		if ( $projects ) {
+			$trail[] = array(
+				'name' => get_the_title( $projects ),
+				'url'  => get_permalink( $projects ),
+			);
+		}
+	}
+
+	foreach ( array_reverse( get_post_ancestors( get_the_ID() ) ) as $ancestor_id ) {
+		$trail[] = array(
+			'name' => get_the_title( $ancestor_id ),
+			'url'  => get_permalink( $ancestor_id ),
+		);
+	}
+
+	echo '<div id="breadcrumbs" class="my-2">';
+	foreach ( $trail as $crumb ) {
+		echo '<a href="' . esc_url( $crumb['url'] ) . '">' . esc_html( $crumb['name'] ) . '</a> <span class="breadcrumb-sep">&raquo;</span> ';
+	}
+	echo '<span class="breadcrumb_last" aria-current="page">' . esc_html( get_the_title() ) . '</span></div>';
+}
