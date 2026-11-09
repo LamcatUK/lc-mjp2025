@@ -17,25 +17,29 @@ get_header();
 		</div>
 	</section>
 	<article>
+		<?php
+		// The gallery and services blocks sit below the card; everything else goes inside it.
+		$after_card = array();
+		?>
 		<div class="container">
 			<div class="case-study__card">
 				<h1><?= esc_html( get_the_title() ); ?></h1>
-				<?php the_content(); ?>
-			</div>
-			<div class="row py-5" id="gallery_items">
 				<?php
-				foreach ( get_field( 'case_study_gallery' ) as $image ) {
-					?>
-				<div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 gallery-item-wrapper">
-					<a href="<?= esc_url( wp_get_attachment_image_url( $image, 'full' ) ); ?>" class="work__link image-3x4 glightbox" data-gallery="work-gallery-all" data-type="image">
-						<?= wp_get_attachment_image( $image, 'large', false, array( 'class' => 'work__image' ) ); ?>
-					</a>
-				</div>
-					<?php
+				foreach ( parse_blocks( get_the_content() ) as $block ) {
+					if ( in_array( $block['blockName'], array( 'acf/lc-case-study-gallery', 'acf/lc-case-study-services' ), true ) ) {
+						$after_card[] = $block;
+						continue;
+					}
+					echo apply_filters( 'the_content', serialize_block( $block ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				}
 				?>
 			</div>
 		</div>
+		<?php
+		foreach ( $after_card as $block ) {
+			echo render_block( $block ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		}
+		?>
 	</article>
 	<section class="image-cta">
 		<img src="<?= get_stylesheet_directory_uri() . '/img/cta-bg.jpg'; ?>" alt="" class="image-cta__image" />
@@ -54,21 +58,5 @@ get_header();
 	</section>
 </main>
 <?php
-add_action(
-	'wp_footer',
-	function () {
-		?>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-	const lightbox = GLightbox({
-		touchNavigation: true,
-		loop: true
-	});
-});
-</script>
-		<?php
-	}
-);
-
 get_footer();
 ?>

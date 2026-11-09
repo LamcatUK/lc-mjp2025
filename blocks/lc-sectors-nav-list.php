@@ -58,17 +58,20 @@ if ( $fg ) {
 				?>
 			</div>
 			<div class="col-lg-6">
-				<?php
-				foreach ( $sectors as $sector ) {
-					?>
+				<ul class="sectors-list__list">
+					<?php
+					foreach ( $sectors as $sector ) {
+						?>
 					<li>
-						<a class="mb-3 has-primary-900-color" href="<?= esc_url( get_permalink( $sector->ID ) ); ?>">
-							<h3 class="sectors-list__title"><?= esc_html( $sector->post_title ); ?></h3>
+						<a class="sectors-list__link <?= esc_attr( $card_class ); ?>" href="<?= esc_url( get_permalink( $sector->ID ) ); ?>">
+							<h3 class="sectors-list__title fs-subtle"><?= esc_html( html_entity_decode( $sector->post_title, ENT_QUOTES, 'UTF-8' ) ); ?></h3>
+							<span class="sectors-list__arrow" aria-hidden="true"><i class="fas fa-chevron-right fa-2x"></i></span>
 						</a>
 					</li>
-					<?php
-				}
-				?>
+						<?php
+					}
+					?>
+				</ul>
 			</div>
 		</div>
 	</div>

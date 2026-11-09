@@ -884,3 +884,22 @@ function lc_breadcrumbs() {
 	}
 	echo '<span class="breadcrumb_last" aria-current="page">' . esc_html( get_the_title() ) . '</span></div>';
 }
+
+
+/**
+ * Prints the GLightbox initialiser for case study galleries.
+ *
+ * @return void
+ */
+function lc_case_study_lightbox_init() {
+	?>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+	const lightbox = GLightbox({
+		touchNavigation: true,
+		loop: true
+	});
+});
+</script>
+	<?php
+}

@@ -14,6 +14,14 @@
   font-weight: 300;
   src: url("../fonts/lato-v25-latin-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+/* lato-400 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/lato-v25-latin-400.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
 /* lato-700 - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
@@ -120,6 +128,10 @@ h4,
 a {
   color: var(--col-accent-400);
   text-decoration: none;
+}
+p a:not(.btn),
+main li a:not([class]) {
+  font-weight: 400;
 }
 a:hover {
   color: var(--col-accent-400-hover);

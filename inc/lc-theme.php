@@ -128,38 +128,6 @@ remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles' );
 remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
 
 /**
- * Registers a custom dashboard widget for the Lamcat theme.
- */
-function register_lc_dashboard_widget() {
-	wp_add_dashboard_widget(
-		'lc_dashboard_widget',
-		'Lamcat',
-		'lc_dashboard_widget_display'
-	);
-}
-add_action( 'wp_dashboard_setup', 'register_lc_dashboard_widget' );
-
-/**
- * Displays the content of the Lamcat dashboard widget.
- */
-function lc_dashboard_widget_display() {
-	?>
-	<div style="display: flex; align-items: center; justify-content: space-around;">
-		<img style="width: 50%;"
-			src="<?= esc_url( get_stylesheet_directory_uri() . '/img/lc-full.jpg' ); ?>">
-		<a class="button button-primary" target="_blank" rel="noopener nofollow noreferrer"
-			href="mailto:hello@lamcat.co.uk/">Contact</a>
-	</div>
-	<div>
-		<p><strong>Thanks for choosing Lamcat!</strong></p>
-		<hr>
-		<p>Got a problem with your site, or want to make some changes & need us to take a look for you?</p>
-		<p>Use the link above to get in touch and we'll get back to you ASAP.</p>
-	</div>
-	<?php
-}
-
-/**
  * Enqueues theme-specific scripts and styles.
  *
  * This function deregisters jQuery and disables certain styles and scripts

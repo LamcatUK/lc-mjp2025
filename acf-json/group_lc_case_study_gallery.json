@@ -1,14 +1,32 @@
 {
-    "key": "group_6962470f3b720",
-    "title": "Case Study Gallery",
+    "key": "group_lc_case_study_gallery",
+    "title": "LC Case Study Gallery",
     "fields": [
         {
-            "key": "field_6962470f88658",
-            "label": "Case Study Gallery",
-            "name": "case_study_gallery",
+            "key": "field_lc_case_study_gallery_title",
+            "label": "LC Case Study Gallery",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "esc_html": 0,
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_lc_cs_gallery_images",
+            "label": "Gallery",
+            "name": "gallery",
             "aria-label": "",
             "type": "gallery",
-            "instructions": "",
+            "instructions": "Project photos, shown as a lightbox grid.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -34,9 +52,9 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "block",
                 "operator": "==",
-                "value": "casestudy"
+                "value": "acf/lc-case-study-gallery"
             }
         ]
     ],
@@ -49,5 +67,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1768048421
+    "modified": 1794225716
 }

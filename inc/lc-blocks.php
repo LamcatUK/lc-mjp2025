@@ -19,6 +19,40 @@ function acf_blocks() {
 
 		acf_register_block_type(
 			array(
+				'name'            => 'lc_case_study_gallery',
+				'title'           => __( 'LC Case Study Gallery' ),
+				'category'        => 'layout',
+				'icon'            => 'cover-image',
+				'render_template' => 'blocks/lc-case-study-gallery.php',
+				'mode'            => 'edit',
+				'supports'        => array(
+					'mode'      => false,
+					'anchor'    => true,
+					'className' => true,
+					'align'     => true,
+				),
+			)
+		);
+
+		acf_register_block_type(
+			array(
+				'name'            => 'lc_case_study_services',
+				'title'           => __( 'LC Case Study Services' ),
+				'category'        => 'layout',
+				'icon'            => 'cover-image',
+				'render_template' => 'blocks/lc-case-study-services.php',
+				'mode'            => 'edit',
+				'supports'        => array(
+					'mode'      => false,
+					'anchor'    => true,
+					'className' => true,
+					'align'     => true,
+				),
+			)
+		);
+
+		acf_register_block_type(
+			array(
 				'name'            => 'lc_sectors_nav_list',
 				'title'           => __( 'LC Sectors Nav List' ),
 				'category'        => 'layout',

@@ -20,7 +20,7 @@ defined( 'ABSPATH' ) || exit;
 				<div class="fs-tiny">Registered Address:<br><?= do_shortcode( '[contact_address]' ); ?></div>
 			</div>
 			<div class="col-sm-3">
-				<div class="footer-title">Services</div>
+				<div class="footer-title"><a href="<?= esc_url( home_url( '/services/' ) ); ?>" class="text-reset text-decoration-none">Services</a></div>
 				<?=
 				wp_nav_menu(
 					array(
@@ -31,7 +31,7 @@ defined( 'ABSPATH' ) || exit;
 				?>
 			</div>
 			<div class="col-sm-3">
-				<div class="footer-title">Working With</div>
+				<div class="footer-title"><a href="<?= esc_url( home_url( '/sectors/' ) ); ?>" class="text-reset text-decoration-none">Working With</a></div>
 				<?=
 				wp_nav_menu(
 					array(
