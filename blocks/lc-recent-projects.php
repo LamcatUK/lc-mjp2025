@@ -115,10 +115,18 @@ if ( $query->have_posts() ) {
 
 		foreach ( $final_images as $item ) {
 			echo '<a class="swiper-slide image-16x9" href="' . esc_url( $item['post_url'] ) . '">';
-			echo wp_get_attachment_image( $item['image_id'], 'medium', false, array( 'class' => 'img-fluid mb-3' ) );
+			echo wp_get_attachment_image(
+				$item['image_id'],
+				'medium',
+				false,
+				array(
+					'class' => 'img-fluid mb-3',
+					'alt'   => get_post_meta( $item['image_id'], '_wp_attachment_image_alt', true ),
+				)
+			);
 			echo '</a>';
 		}
-		
+
 		echo '</div>';
 		echo '</div>';
 		?>
